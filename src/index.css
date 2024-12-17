@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+.markdown-body {
+  @apply prose dark:prose-invert max-w-none;
+}
+
+/* Editor Syntax Highlighting */
+.hljs {
+  @apply bg-gray-100 dark:bg-gray-800;
+  @apply rounded-md p-4;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+/* Print Styles */
+@media print {
+  .markdown-body {
+    @apply max-w-none mx-auto;
+  }
+}
